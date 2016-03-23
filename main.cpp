@@ -1,4 +1,4 @@
-//Qt interface for radio network
+//Qt interface for radio network of arduinos
 #include <QApplication>
 
 #include "k.h"
