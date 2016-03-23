@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>kf</class>
+ <widget class="QDialog" name="kf">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>260</width>
+    <height>463</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0">
+   <property name="spacing">
+    <number>1</number>
+   </property>
+   <property name="leftMargin">
+    <number>1</number>
+   </property>
+   <property name="topMargin">
+    <number>1</number>
+   </property>
+   <property name="rightMargin">
+    <number>1</number>
+   </property>
+   <property name="bottomMargin">
+    <number>1</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLineEdit" name="etf"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btopen">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Открыть</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="gf" name="ggf">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="lineWidth">
+        <number>0</number>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="tabKeyNavigation">
+        <bool>false</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QComboBox" name="cbc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <item>
+          <property name="text">
+           <string>напрямую (gn)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>из дома (по ip)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>с улицы (1 1)</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>первый уровень</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>второй уровень</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>третий уровень</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbtc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Проверка связи</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>gf</class>
+   <extends>QTableView</extends>
+   <header>kf.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>etf</tabstop>
+  <tabstop>ggf</tabstop>
+  <tabstop>btopen</tabstop>
+  <tabstop>cbc</tabstop>
+  <tabstop>pbtc</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>kf</sender>
+   <signal>finished(int)</signal>
+   <receiver>kf</receiver>
+   <slot>kclose()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbc</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>kf</receiver>
+   <slot>ksavecon(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>438</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>239</x>
+     <y>178</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>etf</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>kf</receiver>
+   <slot>etfchanged(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btopen</sender>
+   <signal>clicked()</signal>
+   <receiver>kf</receiver>
+   <slot>kopen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>13</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ggf</sender>
+   <signal>doubleClicked(QModelIndex)</signal>
+   <receiver>kf</receiver>
+   <slot>kopen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>99</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>247</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ggf</sender>
+   <signal>returnpressed()</signal>
+   <receiver>kf</receiver>
+   <slot>kopen()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>176</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>176</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>kopen()</slot>
+  <slot>kclose()</slot>
+  <slot>ksavecon(int)</slot>
+  <slot>rowadd()</slot>
+  <slot>rowdel()</slot>
+  <slot>etfchanged(QString)</slot>
+  <slot>ktest()</slot>
+ </slots>
+</ui>
