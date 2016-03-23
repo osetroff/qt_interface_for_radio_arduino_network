@@ -1,3 +1,4 @@
+//Qt interface for radio network
 #include <QApplication>
 
 #include "k.h"
